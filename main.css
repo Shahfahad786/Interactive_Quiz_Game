@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #8f8f8f;
+    background-color: #646464;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +13,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 800px;
+    width: 600px;
     text-align: center;
+
 }
 
 button {
@@ -22,26 +23,27 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #0275f8;
+    background-color: #2ddd7c;
+    
 }
 
 .option {
     display: block;
     margin: 5px 0;
     padding: 10px;
-    background-color: #083a01;
+    background-color: #c7bebe;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .option:hover {
-    background-color: #02f8bb;
+    background-color: #fd8ee1;
 }
 
 .correct {
-    background-color: #110fac;
+    background-color: #00ffbf;
 }
 
 .incorrect {
-    background-color: #c50505;
+    background-color: #f00000;
 }
