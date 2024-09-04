@@ -102,3 +102,23 @@ var questions = [
     // Add more questions as needed
 ];
 
+var currentQuestionIndex = 0;
+
+function loadQuestion() {
+    var questionElement = document.getElementById('question');
+    var optionsContainer = document.getElementById('options-container');
+
+    // Clear previous options
+    optionsContainer.innerHTML = '';
+
+    var currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    currentQuestion.options.forEach(option => {
+        var optionElement = document.createElement('div');
+        optionElement.classList.add('option');
+        optionElement.textContent = option;
+        optionElement.addEventListener('click', () => checkAnswer(option));
+        optionsContainer.appendChild(optionElement);
+    });
+}
