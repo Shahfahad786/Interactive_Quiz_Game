@@ -122,3 +122,36 @@ function loadQuestion() {
         optionsContainer.appendChild(optionElement);
     });
 }
+
+function checkAnswer(selectedOption) {
+    var correctAnswer = questions[currentQuestionIndex].answer;
+    var options = document.querySelectorAll('.option');
+
+    options.forEach(option => {
+        if (option.textContent === correctAnswer) {
+            option.classList.add('correct');
+        } else if (option.textContent === selectedOption) {
+            option.classList.add('incorrect');
+        }
+    });
+
+    document.getElementById('result').textContent = 
+        selectedOption === correctAnswer ? 'Correct!' : 'Wrong!';
+
+    document.getElementById('next-button').style.display = 'block';
+}
+
+document.getElementById('next-button').addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+        document.getElementById('result').textContent = '';
+        document.getElementById('next-button').style.display = 'none';
+    } else {
+        document.getElementById('result').textContent = 'Quiz Complete!';
+        document.getElementById('next-button').style.display = 'none';
+    }
+});
+
+// Load the first question
+loadQuestion();
